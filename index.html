@@ -5,44 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Resume</title>
     <style>
-        body {
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
         }
-        .container {
-            text-align: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #333;
-        }
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
             background-color: #007bff;
+            padding: 10px;
+            text-align: center;
+            z-index: 1000;
+        }
+        .header a {
             color: #fff;
             text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
             border-radius: 4px;
-        }
-        a:hover {
             background-color: #0056b3;
+        }
+        .header a:hover {
+            background-color: #003f7f;
+        }
+        .pdf-container {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+        }
+        .pdf-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>My Resume</h1>
-        <p>You can download my resume by clicking the button below:</p>
-        <a href="Krishna Tadepalli.pdf" download>Download Resume</a>
+    <div class="header">
+        <a href="resume.pdf" download>Download Resume</a>
+    </div>
+    <div class="pdf-container">
+        <iframe src="Krishna Tadepalli.pdf"></iframe>
     </div>
 </body>
 </html>
